@@ -6,7 +6,7 @@ export type httpReponse = {
 }
 
 const apiCaller = axios.create({
-    baseURL: 'http://209.38.166.241:8080',
+    baseURL: 'https://209.38.166.241:443',
 })
 
 export async function sendGrid({ dayLevels, token, repoUrl, year, email }: any): Promise<httpReponse> {
