@@ -1,0 +1,77 @@
+/* styles/Graph.module.css */
+
+.months {
+    grid-area: months;
+}
+
+.days {
+    grid-area: days;
+}
+
+.squares {
+    grid-area: squares;
+}
+
+.graph {
+    display: inline-grid;
+    grid-template-areas:
+        "empty months"
+        "days squares";
+    grid-template-columns: auto 1fr;
+    grid-gap: 10px;
+    background-color: rgb(13, 17, 23);
+    padding: 20px;
+    border: 1px #2C3239 solid;
+    border-radius: 10px;
+    margin: 20px;
+    opacity: 1;
+    z-index: 1;
+    /* Assurez-vous que la grille est devant le cercle */
+    position: relative;
+    /* Nécessaire pour que z-index soit appliqué */
+}
+
+.months {
+    display: grid;
+    grid-template-columns: calc(var(--week-width) * 4) calc(var(--week-width) * 4) calc(var(--week-width) * 4) calc(var(--week-width) * 5) calc(var(--week-width) * 4) calc(var(--week-width) * 4) calc(var(--week-width) * 5) calc(var(--week-width) * 4) calc(var(--week-width) * 4) calc(var(--week-width) * 5) calc(var(--week-width) * 4) calc(var(--week-width) * 5);
+}
+
+.days,
+.squares {
+    display: grid;
+    grid-gap: var(--square-gap);
+    grid-template-rows: repeat(7, var(--square-size));
+}
+
+.squares {
+    grid-auto-flow: column;
+    grid-auto-columns: var(--square-size);
+    border-radius: 8px;
+}
+
+.days li:nth-child(odd) {
+    visibility: hidden;
+}
+
+.squares li {
+    background-color: #21262D;
+    border-radius: 2.7px;
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transform: scale(1);
+    opacity: 1;
+}
+
+.squares li[data-level="3"] {
+    background-color: #39D353;
+    opacity: 0.9;
+}
+
+.squares li[data-level="1"] {
+    background-color: #0E4429;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.squares li[data-level="2"] {
+    background-color: #006D32;
+    transition: background-color 0.2s ease-in-out;
+}

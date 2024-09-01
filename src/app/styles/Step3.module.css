@@ -1,0 +1,30 @@
+.datePicker {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.p {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    align-self: flex-start;
+    margin-top: 5px;
+
+}
+
+.btn {
+    margin-top: 40px;
+    padding: 5px 30px;
+    border-radius: 60px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    background-color: transparent;
+    color: #5fd873;
+    border: 1.3px solid #5fd873;
+    margin-bottom: 20px;
+}

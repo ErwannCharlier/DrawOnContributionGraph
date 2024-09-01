@@ -1,0 +1,20 @@
+.three-circles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Espace entre les cercles */
+}
+
+.circle {
+
+    width: 20px;
+    /* Diamètre des cercles */
+    height: 20px;
+    border-radius: 50%;
+    /* Pour faire un cercle */
+    border: 2px solid #ccc;
+    /* Couleur de la bordure */
+    background-color: #1a1a1a;
+    /* Couleur de fond (noir) */
+}

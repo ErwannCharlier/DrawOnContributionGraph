@@ -1,0 +1,106 @@
+/* Base styles */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #ffffff;
+
+}
+
+.grid {
+    margin-top: 65px;
+    position: relative;
+    /* Nécessaire pour que le positionnement absolu du cercle fonctionne correctement */
+}
+
+.blur_circle {
+    position: absolute;
+    top: 20%;
+    /* Positionne le centre du cercle au milieu vertical */
+    left: 50%;
+    /* Positionne le centre du cercle au milieu horizontal */
+    transform: translate(-50%, -50%);
+    /* Ajuste pour que le centre du cercle soit exactement au milieu */
+    z-index: 0;
+    /* S'assure que le cercle est derrière la grille */
+    border-radius: 50%;
+    filter: blur(200px);
+    /* Ajuste le niveau de flou */
+    opacity: 0.4;
+    /* Ajuste l'opacité pour un effet plus subtil */
+    pointer-events: none;
+    /* Permet de ne pas interagir avec d'autres éléments */
+    width: 700px;
+    /* Ajuste la taille du cercle */
+    height: 500px;
+    /* Ajuste la taille du cercle */
+    background: #5A7195;
+    /* Couleur et transparence du cercle */
+}
+
+.btn {
+    margin-top: 40px;
+    padding: 5px 30px;
+    border-radius: 60px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    background-color: transparent;
+    color: #5fd873;
+    border: 1.3px solid #5fd873;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .description {
+        font-size: 1.2rem;
+    }
+
+    .graphContainer {
+        padding: 15px;
+    }
+
+    .graph {
+        padding: 15px;
+    }
+
+    .blur_circle {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    .graphContainer {
+        padding: 10px;
+    }
+
+    .graph {
+        padding: 10px;
+    }
+
+    .startNow {
+        font-size: 1rem;
+    }
+
+    .blur_circle {
+        width: 200px;
+        height: 200px;
+    }
+}

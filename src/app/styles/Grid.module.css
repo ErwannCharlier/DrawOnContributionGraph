@@ -1,0 +1,193 @@
+/* Base Styles */
+.grid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    /* Ensure items wrap if necessary */
+}
+
+.week_row {
+    display: flex;
+    flex-direction: column;
+}
+
+.commit_level_0,
+.commit_level_1,
+.commit_level_2,
+.commit_level_3,
+.commit_level_4,
+.empty_cell {
+    width: 18px;
+    height: 18px;
+    margin: 2.5px;
+    border-radius: 3px;
+}
+
+.empty_cell {
+    background-color: transparent;
+}
+
+.color0,
+.commit_level_0 {
+    background-color: #232a33;
+}
+
+.color1,
+.commit_level_1 {
+    background-color: #0E4429;
+}
+
+.color2,
+.commit_level_2 {
+    background-color: #006D32;
+}
+
+
+.color3,
+.commit_level_3 {
+    background-color: #26A641;
+}
+
+.color4,
+.commit_level_4 {
+    background-color: #39D353;
+}
+
+.afterGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.colorPicker {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allow color picker items to wrap if necessary */
+}
+
+.color0,
+.color1,
+.color2,
+.color3,
+.color4 {
+    width: 50px;
+    height: 50px;
+    margin: 12px;
+    border-radius: 3px;
+}
+
+.selectionnedColor {
+    border: 1px dashed black;
+}
+
+.btn {
+    margin: 40px 0 20px;
+    padding: 5px 30px;
+    border: 1.3px solid #5fd873;
+    border-radius: 60px;
+    background-color: transparent;
+    color: #5fd873;
+    font-size: 1.1em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.link {
+    color: #1F6FEB;
+}
+
+.errorMessage {
+    color: rgb(197, 34, 34);
+}
+
+/* Responsive Styles */
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .grid {
+        padding: 8px;
+        gap: 5px;
+        /* Space between items */
+    }
+
+    .commit_level_0,
+    .commit_level_1,
+    .commit_level_2,
+    .commit_level_3,
+    .commit_level_4,
+    .empty_cell {
+        width: 15px;
+        height: 15px;
+        margin: 2px;
+    }
+
+    .color0,
+    .color1,
+    .color2,
+    .color3,
+    .color4 {
+        width: 40px;
+        height: 40px;
+        margin: 10px;
+    }
+
+    .btn {
+        padding: 5px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Small screens (phones) */
+@media (max-width: 480px) {
+    .grid {
+        padding: 5px;
+        gap: 3px;
+        /* Space between items */
+    }
+
+    .commit_level_0,
+    .commit_level_1,
+    .commit_level_2,
+    .commit_level_3,
+    .commit_level_4,
+    .empty_cell {
+        width: 12px;
+        height: 12px;
+        margin: 1.5px;
+    }
+
+    .color0,
+    .color1,
+    .color2,
+    .color3,
+    .color4 {
+        width: 35px;
+        height: 35px;
+        margin: 8px;
+    }
+
+    .btn {
+        padding: 5px 15px;
+        font-size: 0.9em;
+    }
+
+    .afterGrid {
+        padding: 10px;
+    }
+
+    .colorPicker {
+        flex-direction: row;
+        /* Keep color picker items in a row for small screens */
+        flex-wrap: wrap;
+        /* Allow wrapping */
+        align-items: center;
+    }
+}
