@@ -64,6 +64,8 @@
 .squares li[data-level="3"] {
     background-color: #39D353;
     opacity: 0.9;
+    transition: background-color 0.2s ease-in-out;
+
 }
 
 .squares li[data-level="1"] {

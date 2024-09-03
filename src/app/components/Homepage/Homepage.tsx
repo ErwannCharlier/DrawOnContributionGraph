@@ -2,16 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
 import GithubGrid from "./GithubGrid";
-import Header from "./Header";
 import Link from "next/link";
-
-
-
-/**
- *  -> Layout
- *  -> Routing to other pages
- * 
- */
 
 
 const HomePage = ({ ...props }) => {

@@ -1,26 +1,23 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { createElement, useEffect } from 'react'
 import styles from '../../styles/GithubGrid.module.css';
 
 function GithubGrid() {
+    const arr = []
+    for (let i = 1; i < 365; i++) {
+        arr.push(createElement('li', {'data-level':0}));
+    }
     useEffect(() => {
-        const squares = document.querySelector(`.${styles.squares}`);
-        if (squares?.children.length === 0) { // Ajoutez une vérification pour éviter la duplication
-            for (let i = 1; i < 365; i++) {
-                squares.insertAdjacentHTML('beforeend', `<li data-level="0"></li>`);
-            }
-        }
-
         const squareElements = document.querySelectorAll(`.${styles.squares} li`);
         const squareIndexes = [85, 86, 87, 88, 89, 94, 101, 108, 106, 107, 109, 110, 127, 129, 130, 131, 172, 170, 179, 177, 183, 187, 191, 192, 193];
-
-        squareElements.forEach((square, index) => {
-            if (squareIndexes.includes(index)) {
+        const MIN_IDX = 80
+        for (let i = MIN_IDX; i < squareElements.length - 1; i++) {
+            if (squareIndexes.includes(i)) {
                 setTimeout(() => {
-                    square.setAttribute('data-level', '3');
-                }, index * 30);
+                    squareElements[i].setAttribute('data-level', '3');
+                }, (i - MIN_IDX) * 30);
             }
-        });
+        }
     }, []);
 
     return (
@@ -48,7 +45,9 @@ function GithubGrid() {
                 <li>Fri</li>
                 <li>Sat</li>
             </ul>
-            <ul className={styles.squares}></ul>
+            <ul className={styles.squares}>
+                {arr.map(x =>x)}
+            </ul>
         </div>
     );
 }

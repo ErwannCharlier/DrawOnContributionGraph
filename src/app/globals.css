@@ -28,3 +28,5 @@ body {
     --square-gap: 5px;
     --week-width: calc(var(--square-size) + var(--square-gap));
 }
+
+
