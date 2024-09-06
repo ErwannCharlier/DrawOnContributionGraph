@@ -6,7 +6,7 @@ export type httpReponse = {
 }
 
 const apiCaller = axios.create({
-    baseURL: 'https://209.38.166.241:443',
+    baseURL: 'https://faas-ams3-2a2df116.doserverless.co/api/v1/web/fn-360c0c09-22db-4ca5-bde4-3ab3d78db36f/draw',
 })
 
 export async function sendGrid({ dayLevels, token, repoUrl, year, email }: any): Promise<httpReponse> {
@@ -21,7 +21,7 @@ export async function sendGrid({ dayLevels, token, repoUrl, year, email }: any):
     };
 
     try {
-        await apiCaller.post('processGrid', data);
+        await apiCaller.post('/sendGrid', data);
         return { error: false, message: 'Success' };
     } catch (err: any) {
         console.log('Request failed:', err);
@@ -42,7 +42,7 @@ export async function validateInputs({ token, repository, email, year }: any):
         };
 
         console.log("Data:", data);
-        await apiCaller.post('validateToken', data);
+        await apiCaller.post('/validateToken', data);
         return { error: false, message: 'Inputs validated successfully' };
     } catch (err: any) {
         console.log('Request failed:', err);
